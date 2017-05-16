@@ -6,7 +6,7 @@ import sys
 GID=16777216
 
 if __name__ == "__main__":
-    os_kind = sys.argv[0]
+    os_kind = sys.argv[1]
 
     print("#!/usr/bin/env bash")
     print("groupadd -g {} members".format(GID))
