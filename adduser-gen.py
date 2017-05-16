@@ -6,7 +6,7 @@ import sys
 GID=16777216
 
 if __name__ == "__main__":
-    os = sys.argv[0]
+    os_kind = sys.argv[0]
 
     print("#!/usr/bin/env bash")
     print("groupadd -g {} members".format(GID))
@@ -25,14 +25,14 @@ if __name__ == "__main__":
         if gid != GID:
             continue
 
-        if os == "centos":
+        if os_kind == "centos":
             print("useradd -M -d /home/{}.{} --group members -u {} {}.{}".format(firstname, lastname, uid, firstname, lastname))
-        elif osm == "manjaro":
+        elif os_kind == "manjaro":
             print("useradd -M -d /home/{}.{} --group members -u {} {}_{}".format(firstname, lastname, uid, firstname, lastname))
             print("sed -i -e 's:{}_{}:{}.{}:g' /etc/passwd".format(firstname, lastname, firstname, lastname))
             print("sed -i -e 's:{}_{}:{}.{}:g' /etc/group".format(firstname, lastname, firstname, lastname))
             print("sed -i -e 's:{}_{}:{}.{}:g' /etc/shadow".format(firstname, lastname, firstname, lastname))
             print("sed -i -e 's:{}_{}:{}.{}:g' /etc/gshadow".format(firstname, lastname, firstname, lastname))
         else:
-            raise Exception("Unknown OS {}".format(os))
+            raise Exception("Unknown OS {}".format(os_kind))
         print()
