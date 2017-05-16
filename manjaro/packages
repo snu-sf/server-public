@@ -1,0 +1,12 @@
+base-devel
+vi
+vim
+emacs
+git
+nfs-utils
+gcc
+clang
+llvm
+cmake
+opam
+zsh
