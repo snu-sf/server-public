@@ -31,8 +31,8 @@ fi
 
 # Setup SSD
 for username in `ls /home | grep "\."`; do
-    uid=`stat -c '%u' /data/home/$username`
-    gid=`stat -c '%g' /data/home/$username`
+    uid=`stat -c '%u' /home/$username`
+    gid=`stat -c '%g' /home/$username`
 
     if [ $gid = $GID ]; then
         mkdir -p /opt/devel/$username
