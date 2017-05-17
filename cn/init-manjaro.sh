@@ -2,8 +2,11 @@
 
 # install packages
 pacman -Syu
-pacman -S --needed base-devel vi vim emacs git nfs-utils
-mhwd-kernel -l # consider installing a new one
+pacman -S --needed base-devel yaourt vi vim emacs git nfs-utils openssh
+
+# Configure SSHD
+systemctl enable sshd
+systemctl start sshd
 
 # get NFS share
 mkdir /web
