@@ -21,7 +21,8 @@ details.
 
 - After reboot, you may need to set dhcp.
 
-        dhclient ens15f1 # `ip addr show` and check the interface name
+        systemctl enable dhcpcd@ens15f1 # `ip addr show` and check the interface name
+        systemctl start dhcpcd@ens15f1
 
 - Run `server-public` scripts.
 
