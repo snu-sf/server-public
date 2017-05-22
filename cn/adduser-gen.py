@@ -27,6 +27,7 @@ if __name__ == "__main__":
 
         if os_kind == "centos":
             print("useradd -M -d /home/{}.{} --group members -u {} {}.{}".format(firstname, lastname, uid, firstname, lastname))
+            print("su {}.{} -c \"restorecon -R -v ~/.ssh\"".format(firstname, lastname))
         elif os_kind == "manjaro":
             print("useradd -M -d /home/{}.{} --group members -u {} {}_{}".format(firstname, lastname, uid, firstname, lastname))
             print("sed -i -e 's:{}_{}:{}.{}:g' /etc/passwd".format(firstname, lastname, firstname, lastname))
