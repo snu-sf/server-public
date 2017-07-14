@@ -31,6 +31,7 @@ details.
 
         systemctl enable dhcpcd@ens15f1 # `ip addr show` and check the interface name
         systemctl start dhcpcd@ens15f1
+        ping www.google.com
 
 - Run `server-public` scripts.
 
