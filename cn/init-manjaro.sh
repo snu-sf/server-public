@@ -23,4 +23,4 @@ cp authorized_keys /root/.ssh
 chmod 600 /root/.ssh/authorized_keys
 
 # add users
-./useradd-gen.py manjaro | bash -s
+./adduser-gen.py manjaro | bash -s
