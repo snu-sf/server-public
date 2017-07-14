@@ -10,13 +10,21 @@ details.
     + `sudo pacman-mirrors -c Japan # check if there are Korean mirrors`
     + `sudo setup`
     + language: English
-    + Partition Disk
-        * Automatic Partitioning
-        * Mount Partitions: /dev/sda2, btrfs (compress-force=lzo, autodefrag, noatime, ssd, space_cache), mount on /, subvolume on /opt, no swap
-        * Mount Partitions: /dev/sda1, vfat, mount on /boot # will be UEFI partition
-    + Install base packages: systemd, linux latest, UEFI bootloader
-    + configure base: generate fstab = device UUID, hostname = cn??, locale = en_US.UTF8, timezone = Asia/Seoul, hardware clock = UTC, set root pw
-    + advanced installtions: try installing graphic card, network driver
+    + Prepare Installation
+        * Partition Disk
+           - Choose Automatic Partitioning
+        * Mount Partitions
+           - /dev/sda2, btrfs (autodefrag, compress-force=lzo, noatime, space_cache, ssd), create subvolume, manual mode,
+             mount on /, subvolume on /opt, no swap partition
+           - /dev/sda1, vfat, mount on /boot # will be UEFI partition
+    + Install Base
+        * Install Base Packages
+           - systemd, linux latest
+        * Install Bootloader
+           - UEFI bootloader
+    + Configure Base
+        * generate fstab = device UUID, hostname = cn??, locale = en_US.UTF8, timezone = Asia/Seoul, hardware clock = UTC, set root pw
+    + Advanced Installations: try installing graphic card, network driver
 
 
 - After reboot, you may need to set dhcp.
