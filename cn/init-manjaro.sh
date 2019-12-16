@@ -2,7 +2,7 @@
 
 # install packages
 pacman -Syu
-pacman -S --needed base-devel vi vim emacs git nfs-utils openssh
+pacman -S --needed base-devel vi vim emacs git nfs-utils openssh ninja re2c the_silver_searcher
 
 # Configure SSHD
 systemctl enable sshd
